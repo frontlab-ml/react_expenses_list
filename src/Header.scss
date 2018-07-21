@@ -1,5 +1,8 @@
 .header-wrapper {
   margin-bottom: 40px;
+  background: #ddd;
+  padding: 10px;
+  border: 1px solid #bbb;
   h1 {
     font-weight: 500;
     font-size: 2rem;
@@ -15,7 +18,7 @@
 .conversion-rate--wrapper {
   font-size: 1.4rem;ł
   input[type="text"] {
-    border: 1px dotted #999;
+    border: 1px dotted #bbb;
     width: 65px;
   }
 }

@@ -1,29 +1,114 @@
+.header-wrapper {
+  margin-bottom: 40px;
+  background: #ddd;
+  padding: 10px;
+  border: 1px solid #bbb;
+  h1 {
+    font-weight: 500;
+    font-size: 2rem;
+  }
+}
+
+.header-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.conversion-rate--wrapper {
+  font-size: 1.4rem;
+  input[type="text"] {
+    border: 1px solid #bbb;
+    background: #ddd;
+    width: 73px;
+    transition: all .3s ease;
+    &:focus,
+    &:active {
+      background: white;
+      transition: all .3s ease;
+      width: 100px;
+    }
+  }
+}
+
+
+
+.header-actions {
+  margin-top: 40px;
+  .field {
+    float: left;
+    padding: 5px 5px 5px 0;
+    &:focus-within {
+      transition: all .3s ease;
+      background: #bbb;
+      box-shadow: 0 0 3px 0 rgba(0,0,0,.15);
+      // font-weight: 500;
+    }
+  }
+  label {
+    display: inline-block;
+    text-align: left;
+    width: 150px;
+    margin-right: 10px;
+  }
+}
+
+.btn-add {
+  border: 1px solid #bbb;
+  font-size: 1.4rem;
+  border-radius: 3px;
+  background-color: #eee;
+  padding: 2px 30px;
+  float: right;
+  transition: box-shadow .3s ease;
+  &:hover {
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.15);
+  }
+}
+
+
 table {
   text-align: left;
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  border: 1px solid;
+  border: 1px solid #bbb; 
   border-width: 0 0 1px 1px;
   thead {
     th {
-      background-color: #eee;
-      font-weight: 600;
+      background-color: #ddd;
+      font-weight: 500;
     }
   }
   tfoot {
     td {
       padding-top: 40px;
       strong {
-        font-weight: 600;
+        font-weight: 500;
+      }
+    }
+  }
+  tbody {
+    td {
+      &:last-of-type {
+        text-align: center;
       }
     }
   }
   th,
   td {
-    border: 1px solid #333;
+    border: 1px solid #bbb;
     border-width: 1px 1px 0 0;
     font-size: 1.2rem;
-    padding: 20px 10px;
+    padding: 15px 10px;
   }
+}
+
+.btn-delete {
+  border: 1px solid #bbb;
+  background: #ddd;
+  border-radius: 3px;
+  font-weight: 300;
+  font-size: 1.2rem;
+  padding: 2px 5px;
 }

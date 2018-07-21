@@ -74,7 +74,7 @@ input[type="submit"]::-moz-focus-inner {
 
 textarea,
 input {
-  border: 1px solid #333;
+  border: 1px solid #bbb;
   padding: 2px 5px;
   &:focus,
   &:active {
@@ -107,7 +107,7 @@ body {
  display: flex;
  justify-content: center;
  align-items: flex-start;
- font-family: Helvetica, Arial, sans-serif;
+ font-family: 'Raleway', Helvetica, Arial, sans-serif;
  font-size: 1rem;
  font-weight: 300;
  line-height: 1.2;
@@ -125,10 +125,11 @@ input[type="text"],
 input[type="number"] {
   font-size: 1.4rem;
   color: #333;
+  border-radius: 5px;
 }
 
 .main-wrapper {
   margin-top: 100px;
   max-width: 800px;
-  width: 40vw;
+  width: 40vw; 
 }

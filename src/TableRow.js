@@ -11,7 +11,7 @@ const TableRow = props => {
             <td>{item.amount}</td>
             <td>{(item.amount * props.rate).toFixed(2)}</td>
             <td>
-              <button onClick={() => props.remove(index)}>Delete Row</button>
+              <button className="btn-delete" onClick={() => props.remove(index)}>Delete Row</button>
             </td>
           </tr>
         )

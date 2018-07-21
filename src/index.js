@@ -4,7 +4,6 @@ import TableRow from './TableRow';
 import TableSum from './TableSum';
 
 import './index.scss';
-import './Header.scss';
 import './Table.scss';
 
 class Expenses extends React.Component {
@@ -17,24 +16,31 @@ class Expenses extends React.Component {
         amount: "",
       }]
     };
-    this.handleTitle = this.handleTitle.bind(this);
-    this.handleAmount = this.handleAmount.bind(this);
+    // this.handleTitle = this.handleTitle.bind(this);
+    // this.handleAmount = this.handleAmount.bind(this);
+    this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleRateChange = this.handleRateChange.bind(this);
     this.handleDeleteRow = this.handleDeleteRow.bind(this);
   }
 
-  handleTitle(e) {
+  handleInput(e) {
     this.setState({
-      title: e.target.value
-    });
-  };
-
-  handleAmount(e) {
-    this.setState({
-      amount: e.target.value
+      [e.target.name]: e.target.value
     })
-  };
+  }
+
+  // handleTitle(e) {
+  //   this.setState({
+  //     title: e.target.value
+  //   });
+  // };
+
+  // handleAmount(e) {
+  //   this.setState({
+  //     amount: e.target.value
+  //   })
+  // };
 
   handleRateChange(e) {
     const getNum = val => {
@@ -76,7 +82,7 @@ class Expenses extends React.Component {
             <h1>List of expenses</h1>
             <div className="conversion-rate--wrapper">
               <span>1EUR = </span>
-              <input onChange={this.handleRateChange} value={this.state.conversionRate} type="text" /> PLN
+              <input onChange={this.handleRateChange} value={this.state.conversionRate} title={this.state.conversionRate} type="text" /> PLN
             </div>
           </div>
 
@@ -86,8 +92,8 @@ class Expenses extends React.Component {
               <input
                 id="title-of-transaction"
                 minLength={5}
-                onChange={this.handleTitle}
-                name="titleOfTransaction"
+                onChange={this.handleInput}
+                name="title"
                 type="text"
                 required
                 value={this.state.rows.title}
@@ -99,7 +105,7 @@ class Expenses extends React.Component {
               <input
                 id="amount"
                 name="amount"
-                onChange={this.handleAmount}
+                onChange={this.handleInput}
                 step="0.01"
                 required
                 value={this.state.rows.amount}
