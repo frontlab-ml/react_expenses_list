@@ -1,0 +1,29 @@
+table {
+  text-align: left;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid;
+  border-width: 0 0 1px 1px;
+  thead {
+    th {
+      background-color: #eee;
+      font-weight: 600;
+    }
+  }
+  tfoot {
+    td {
+      padding-top: 40px;
+      strong {
+        font-weight: 600;
+      }
+    }
+  }
+  th,
+  td {
+    border: 1px solid #333;
+    border-width: 1px 1px 0 0;
+    font-size: 1.2rem;
+    padding: 20px 10px;
+  }
+}

@@ -1,0 +1,46 @@
+.header-wrapper {
+  margin-bottom: 40px;
+  h1 {
+    font-weight: 500;
+    font-size: 2rem;
+  }
+}
+
+.header-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.conversion-rate--wrapper {
+  font-size: 1.4rem;ł
+  input[type="text"] {
+    border: 1px dotted #999;
+    width: 65px;
+  }
+}
+
+.header-actions {
+  margin-top: 40px;
+  .field {
+    float: left;
+    &:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+  }
+  label {
+    display: inline-block;
+    text-align: left;
+    width: 150px;
+    margin-right: 10px;
+  }
+}
+
+.btn-add {
+  border: 1px solid #333;
+  font-size: 1.4rem;
+  border-radius: 3px;
+  background-color: #eee;
+  padding: 2px 30px;
+  float: right;
+}
