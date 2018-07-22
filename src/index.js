@@ -16,8 +16,6 @@ class Expenses extends React.Component {
         amount: "",
       }]
     };
-    // this.handleTitle = this.handleTitle.bind(this);
-    // this.handleAmount = this.handleAmount.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleRateChange = this.handleRateChange.bind(this);
@@ -28,30 +26,6 @@ class Expenses extends React.Component {
     this.setState({
       [e.target.name]: e.target.value
     })
-  }
-
-  // handleTitle(e) {
-  //   this.setState({
-  //     title: e.target.value
-  //   });
-  // };
-
-  // handleAmount(e) {
-  //   this.setState({
-  //     amount: e.target.value
-  //   })
-  // };
-
-  handleRateChange(e) {
-    const getNum = val => {
-      if (isNaN(val)) {
-        return ''
-      }
-      return val;
-    }
-    this.setState({
-      conversionRate: getNum(e.target.value)
-    });
   }
 
   handleSubmit(e) {
@@ -65,9 +39,20 @@ class Expenses extends React.Component {
     this.refs.form.reset();
   };
 
+  handleRateChange(e) {
+    const getNum = val => {
+      if (isNaN(val)) {
+        return ''
+      }
+      return val;
+    }
+    this.setState({
+      conversionRate: getNum(e.target.value)
+    });
+  }
+
   handleDeleteRow(rowId) {
     const arr = this.state.rows;
-    // (bad) Instead of slice(1) -> remove empty object in array
     arr.splice(rowId + 1, 1);
     this.setState({
       rows: arr
@@ -82,7 +67,11 @@ class Expenses extends React.Component {
             <h1>List of expenses</h1>
             <div className="conversion-rate--wrapper">
               <span>1EUR = </span>
-              <input onChange={this.handleRateChange} value={this.state.conversionRate} title={this.state.conversionRate} type="text" /> PLN
+              <input
+                onChange={this.handleRateChange}
+                title={this.state.conversionRate}
+                type="text"
+                value={this.state.conversionRate} /> PLN
             </div>
           </div>
 
@@ -92,12 +81,12 @@ class Expenses extends React.Component {
               <input
                 id="title-of-transaction"
                 minLength={5}
-                onChange={this.handleInput}
                 name="title"
-                type="text"
+                onChange={this.handleInput}
                 required
-                value={this.state.rows.title}
-                title="Please type minimum 5 characters." />
+                type="text"
+                title="Please type minimum 5 characters."
+                value={this.state.rows.title} />
             </div>
 
             <div className="field">
@@ -106,11 +95,11 @@ class Expenses extends React.Component {
                 id="amount"
                 name="amount"
                 onChange={this.handleInput}
-                step="0.01"
                 required
-                value={this.state.rows.amount}
+                step="0.01"
                 title="Please type numbers"
-                type="number" />
+                type="number"
+                value={this.state.rows.amount} />
             </div>
 
             <button className="btn-add">Add</button>

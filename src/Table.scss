@@ -31,8 +31,6 @@
   }
 }
 
-
-
 .header-actions {
   margin-top: 40px;
   .field {
@@ -42,7 +40,6 @@
       transition: all .3s ease;
       background: #bbb;
       box-shadow: 0 0 3px 0 rgba(0,0,0,.15);
-      // font-weight: 500;
     }
   }
   label {
@@ -65,7 +62,6 @@
     box-shadow: 0 0 3px 0 rgba(0,0,0,.15);
   }
 }
-
 
 table {
   text-align: left;
@@ -111,4 +107,11 @@ table {
   font-weight: 300;
   font-size: 1.2rem;
   padding: 2px 5px;
+}
+
+input[type="text"],
+input[type="number"] {
+  font-size: 1.4rem;
+  color: #333;
+  border-radius: 5px;
 }
