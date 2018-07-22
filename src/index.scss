@@ -61,6 +61,12 @@ input[type="submit"] {
  cursor:pointer
 }
 
+button {
+  &:focus {
+    outline: 0;
+  }
+}
+
 button::-moz-focus-inner,
 html input[type="button"]::-moz-focus-inner,
 input[type="reset"]::-moz-focus-inner,
