@@ -61,16 +61,14 @@ class Expenses extends React.Component<PropsType, StateType> {
   };
 
   convertToNum(val: string): number | null {
-    const value = parseInt(val, 10);
-
+    const value = parseFloat(val);
     if (isNaN(value)) {
       return null;
     }
-
     return value;
   }
 
-  handleRateChange(e: React.FormEvent<HTMLInputElement>) {
+  handleRateChange = (e: React.FormEvent<HTMLInputElement>) => {
     const value = this.convertToNum(e.currentTarget.value);
 
     if (value !== null) {

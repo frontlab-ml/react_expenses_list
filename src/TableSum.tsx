@@ -14,7 +14,7 @@ const TableSum = (props: PropsType) => {
     .map(item => item.amount)
     .reduce(getSum, 0);
 
-  const sum = () => (result * props.rate).toFixed(2);
+  const sum = (result * props.rate).toFixed(2);
 
   return (
     <React.Fragment>
