@@ -4,11 +4,16 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/index.tsx",
   mode: "development",
 
   // Source Map in any files
   devtool: 'inline-source-map',
+
+  resolve: {
+    // Add '.ts' and '.tsx' as resolvable extensions.
+    extensions: [".ts", ".tsx", ".js", ".json"]
+  },
 
   output: {
     filename: "[name].bundle.js",
@@ -25,6 +30,11 @@ module.exports = {
 
   module: {
     rules: [
+      // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
+      {
+        test: /\.tsx?$/,
+        loader: "awesome-typescript-loader"
+      },
       // SCSS and CSS
       {
         test: /\.scss$/,

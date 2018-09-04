@@ -1,7 +1,14 @@
-import React from 'react';
+import * as React from 'react';
+import { RowType } from 'Types';
 
-const TableRow = props => {
-  const arr = props.rows.slice(1);
+interface PropsType {
+  rows: Array<RowType>,
+  rate: number,
+  remove: (index: number) => void,
+}
+
+const TableRow = (props: PropsType) => {
+  const arr = props.rows;
   return (
     <React.Fragment>
       {
